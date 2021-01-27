@@ -1,0 +1,68 @@
+@media screen and (max-width: 1500px) {
+    .collections__small-block {
+        flex: 35% 1 1;
+    }
+
+    .collections__large-block {
+        flex: 65% 1 1;
+    }
+
+    .new-season {
+        padding: 60px 30px;
+    }
+
+    .card__picture-block {
+        width: 234px;
+        height: 293px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .collections__row {
+        flex-direction: column;
+    }
+
+    .collections__row_second {
+        flex-direction: column-reverse;
+    }
+
+    .collections__bg {
+        background-size: cover;
+    }
+
+    .collections__small-block {
+        min-height: 620px;
+    }
+
+    .new-season__list {
+        justify-content: center;
+        margin: 0 -25px;
+    }
+
+    .new-season__list .card {
+        margin: 0 25px;
+    }
+
+    .brands__list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .brand {
+        flex-basis: 45%;
+        display: flex;
+        /* justify-content: center; */
+    }
+
+    .brand:nth-child(2n + 1) {
+        justify-content: flex-end;
+    }
+
+    .new-items {
+        padding: 70px 0 55px 0;
+    }
+    
+    .new-items__list {
+        margin-top: 50px;
+    }
+}
