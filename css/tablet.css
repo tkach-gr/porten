@@ -1,0 +1,33 @@
+@media screen and (max-width: 1100px) {
+    .bottom {
+        padding: 50px 0;
+    }
+
+    .bottom__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom-item {
+        max-width: 600px;
+        margin: 35px 0;
+        flex: auto;
+    }
+
+    .bottom__title {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .bottom-mailing {
+        margin-top: 20px
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .new-season__list .card {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}

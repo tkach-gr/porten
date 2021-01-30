@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .top-line {
+        display: none;
+    }
+
+    .menu-item_img {
+        margin-left: 0;
+    }
+
+    .menu-item_text {
+        display: none;
+    }
+
+    .main-screen__container {
+        padding: 95px 0;
+    }
+}

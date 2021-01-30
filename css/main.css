@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+body.hide {
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
     color: white
@@ -54,6 +58,7 @@ img {
     background-color: black;
     color: white;
     font-family: 'PT Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 .top-line {
@@ -151,6 +156,7 @@ img {
 }
 
 .header__logo {
+    position: relative;
     display: flex;
     align-items: center;
     font-family: "PostNoBillsJaffna";
@@ -161,6 +167,7 @@ img {
     user-select: none;
     cursor: pointer;
     margin-left: -20px;
+    z-index: 10;
 }
 
 .header__logo-link {
@@ -199,6 +206,244 @@ img {
 
 .menu-item_img:last-child {
     margin-left: 0;
+}
+
+.menu-btn {
+    position: relative;
+    z-index: 10;
+}
+
+.menu-btn__content {
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+
+.menu-btn__top {
+    content: "";
+    position: absolute;
+    top: calc(0% + 2px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform-origin: center center;
+}
+
+.menu-btn.pressed .menu-btn__top {
+    animation-name: MenuBtnTopAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes MenuBtnTopAnimation {
+    0% { 
+        top: calc(0% + 2px);
+        transform: rotate(0deg);
+    } 
+    50% {
+        top: calc(50% - 1px);
+        transform: rotate(0deg);
+    } 
+    100% {
+        top: calc(50% - 1px);
+        transform: rotate(45deg);
+    }
+}
+
+.menu-btn.unpressed .menu-btn__top {
+    animation-name: MenuBtnTopAnimationBack;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+@keyframes MenuBtnTopAnimationBack {
+    0% {
+        top: calc(50% - 1px);
+        transform: rotate(45deg); 
+    } 
+    50% {
+        top: calc(50% - 1px);
+        transform: rotate(0deg);
+    } 
+    100% {
+        top: calc(0% + 2px);
+        transform: rotate(0deg);
+    }
+}
+
+.menu-btn__middle {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.menu-btn.pressed .menu-btn__middle {
+    animation-name: MenuBtnMiddleAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes MenuBtnMiddleAnimation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.menu-btn.unpressed .menu-btn__middle {
+    animation-name: MenuBtnMiddleAnimationBack;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+@keyframes MenuBtnMiddleAnimationBack {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.menu-btn__bottom {
+    content: "";
+    position: absolute;
+    bottom: calc(0% + 2px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.menu-btn.pressed .menu-btn__bottom {
+    animation-name: MenuBtnBottomAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes MenuBtnBottomAnimation {
+    0% { 
+        bottom: calc(0% + 2px);
+        transform: rotate(0deg);
+    } 
+    50% {
+        bottom: calc(50% - 1px);
+        transform: rotate(0deg);
+    } 
+    100% {
+        bottom: calc(50% - 1px);
+        transform: rotate(-45deg);
+    }
+}
+
+.menu-btn.unpressed .menu-btn__bottom {
+    animation-name: MenuBtnBottomAnimationBack;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+
+}
+
+@keyframes MenuBtnBottomAnimationBack {
+    0% {
+        bottom: calc(50% - 1px);
+        transform: rotate(-45deg);
+    }
+    50% {
+        bottom: calc(50% - 1px);
+        transform: rotate(0deg);
+    } 
+    100% { 
+        bottom: calc(0% + 2px);
+        transform: rotate(0deg);
+    } 
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #0f0f0fea;
+    color: rgb(218, 218, 218);
+    font-family: "PT Sans";
+    padding: 85px 0 40px 0;
+    overflow-y: scroll;
+    z-index: 6;
+    transition: 
+        left 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.menu.show {
+    visibility: visible;
+    left: 0;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__item {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 0;
+}
+
+.menu-login {
+    display: flex;
+}
+
+.menu-login__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 7px;
+}
+
+.menu-login__text {
+    line-height: 24px;
+}
+
+.menu__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__phone {
+    display: flex;
+    align-items: center;
+}
+
+.menu__bottom-img {
+    width: 16px;
+    height: 16px;
+}
+
+.menu__number {
+    margin-left: 5px;
+}
+
+.menu__work-days {
+    margin-top: 6px
+}
+
+.menu__work-hours {
+    margin-top: 6px
 }
 
 .content {
@@ -444,6 +689,10 @@ img {
     margin-top: 81px;
 }
 
+.new-items__list.slider {
+    display: block;
+}
+
 .new-items__list .card {
     margin-bottom: 40px;
 }
@@ -562,6 +811,13 @@ img {
     flex: 200px 1 1;
 }
 
+.mailing-form__mail-input::placeholder {
+    color: #e7e7e7;
+    font-size: 14px;
+    line-height: 150%;
+    font-family: "PT Sans";
+}
+
 .mailing-form__submit {
     padding: 10px 20px;
     font-size: 14px;
@@ -620,4 +876,94 @@ img {
     bottom: 0;
     width: 100%;
     border-bottom: #d0d0d080 1px solid;
+}
+
+
+
+
+
+
+/* SLIDER */
+.slider {
+    cursor: grab;
+}
+
+.slider__content {
+    display: flex;
+    justify-content: center;
+}
+
+.slider__point {
+    position: relative;
+    width: 266px;
+    height: 373px;
+    touch-action: pan-y; 
+}
+
+.slider__smooth {
+    transition: left 0.2s ease;
+}
+
+.slider__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slider__wrapper_second {
+    left: -500%;
+}
+
+
+
+
+
+
+
+
+
+
+/* CARD */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+}
+
+.slider .card {
+    margin: 0 16px;
+}
+
+.card__picture-block {
+    display: flex;
+    width: 260px;
+    height: 325px;
+    justify-content: center;
+    align-items: center;
+    background-color: #191B1C;
+    user-select: none;
+}
+
+.card__picture {
+    width: 215px;
+    height: 214px;
+    user-select: none;
+}
+
+.card__name {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 25px;
+}
+
+.card__price {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: 10px;
 }

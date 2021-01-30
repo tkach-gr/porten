@@ -6,6 +6,8 @@
     <title>Porten</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/desktop.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -43,18 +45,50 @@
                     <a class="header__logo-link" href="/">PORTEN</a>
                 </div>
                 <div class="header__menu">
-                    <a href="#" class="menu-item">Понравилось</a>
-                    <a href="#" class="menu-item">личный кабинет</a>
-                    <a href="#" class="menu-item">настройки</a>
+                    <a href="#" class="menu-item menu-item_text">Понравилось</a>
+                    <a href="#" class="menu-item menu-item_text">личный кабинет</a>
+                    <a href="#" class="menu-item menu-item_text">настройки</a>
                     <a href="#" class="menu-item menu-item_img">
                         <img src="./images/cart.svg" alt="cart">
                     </a>
                     <a href="#" class="menu-item menu-item_img">
                         <img src="./images/search.svg" alt="search">
                     </a>
+                    <div id="menu-btn" class="menu-item menu-btn">
+                        <div class="menu-btn__content">
+                            <div class="menu-btn__top"></div>
+                            <div class="menu-btn__middle"></div>
+                            <div class="menu-btn__bottom"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
+        <div id="menu" class="menu">
+            <div class="menu__list">
+                <a href="#" class="menu__item">Понравилось</a>
+                <a href="#" class="menu__item">Личный кабинет</a>
+                <a href="#" class="menu__item">Настройки</a>
+                <a href="#" class="menu__item menu-login">
+                    <div class="menu-login__img">
+                        <img src="./images/login.svg" alt="login">
+                    </div>
+                    <div class="menu-login__text">
+                        Войти / Регистрация
+                    </div>
+                </a>
+            </div>
+            <div class="menu__bottom">
+                <div class="menu__phone">
+                    <div class="menu__bottom-img">
+                        <img src="./images/phone.svg" alt="phone">
+                    </div>
+                    <div class="menu__number">8 (812) 123-45-67</div>
+                </div>
+                <div class="menu__work-days">Работаем 7 дней в неделю</div>
+                <div class="menu__work-hours">9:00 — 18:00</div>
+            </div>
+        </div>
         <main class="content">
             <div class="main-screen">
                 <div class="container main-screen__container">
@@ -75,7 +109,7 @@
                         <div class="new-season__title title">
                             СЕЗОН 2020/21
                         </div>
-                        <div class="new-season__list">
+                        <div id="new-season-list" class="new-season__list">
                             <div class="card">
                                 <div class="card__picture-block">
                                     <div class="card__picture">
@@ -133,7 +167,7 @@
             <div class="new-items">
                 <div class="md-container">
                     <div class="title new-items__title">Новые поступления</div>
-                    <div class="new-items__list">
+                    <div id="new-items-list" class="new-items__list">
                         <div class="card">
                             <div class="card__picture-block">
                                 <div class="card__picture">
@@ -239,13 +273,13 @@
             <div class="bottom">
                 <div class="bottom__bg"></div>
                 <div class="md-container bottom__container">
-                    <div class="bottom__about">
+                    <div class="bottom-item bottom__about">
                         <div class="bottom__title">О магазине</div>
                         <div class="bottom__text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi semper viverra nunc cursus tortor lectus nunc nulla nibh. Egestas amet consectetur vel vitae aliquam dictum suspendisse. Lobortis eget consequat, tellus et et sed turpis. Pretium quisque vitae, amet, porttitor odio ultricies massa pharetra leo. Et ipsum urna fames in sit mi ultrices nisi, nunc.
                         </div>
                     </div>
-                    <div class="bottom__categories">
+                    <div class="bottom-item bottom__categories">
                         <div class="bottom__title">Категории</div>
                         <div class="bottom__categories-list">
                             <a href="#" class="bottom__category">часы</a>
@@ -255,7 +289,7 @@
                             <a href="#" class="bottom__category">запонки</a>
                         </div>
                     </div>
-                    <div class="bottom__mailing">
+                    <div class="bottom-item bottom__mailing">
                         <div class="bottom__title">Рассылка</div>
                         <div class="bottom__text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi semper viverra nunc cursus tortor lectus nunc nulla nibh.

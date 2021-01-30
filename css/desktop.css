@@ -18,6 +18,11 @@
 }
 
 @media screen and (max-width: 1280px) {
+    .menu-item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     .collections__row {
         flex-direction: column;
     }
@@ -51,7 +56,6 @@
     .brand {
         flex-basis: 45%;
         display: flex;
-        /* justify-content: center; */
     }
 
     .brand:nth-child(2n + 1) {
