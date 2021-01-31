@@ -16,7 +16,8 @@ body.hide {
 
 a {
     text-decoration: none;
-    color: white
+    color: white;
+    -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -27,7 +28,7 @@ img {
 .md-container {
     width: 100%;
     max-width: 1150px;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .container {
@@ -192,9 +193,11 @@ img {
         color 0.3s ease;
 }
 
-.menu-item:hover {
-    background-color: #1F1F1F;
-    color: white;
+@media screen and (min-width: 769px) {
+    .menu-item:hover {
+        background-color: #1F1F1F;
+        color: white;
+    }
 }
 
 .menu-item_img {
@@ -204,11 +207,12 @@ img {
     margin-left: 20px;
 }
 
-.menu-item_img:last-child {
+.menu-item_img:nth-child(n + 5) {
     margin-left: 0;
 }
 
 .menu-btn {
+    display: none;
     position: relative;
     z-index: 10;
 }
@@ -364,8 +368,8 @@ img {
     position: fixed;
     top: 0;
     left: -100%;
+    display: none;
     visibility: hidden;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -374,12 +378,16 @@ img {
     background-color: #0f0f0fea;
     color: rgb(218, 218, 218);
     font-family: "PT Sans";
-    padding: 85px 0 40px 0;
+    padding: 85px 0 65px 0;
     overflow-y: scroll;
     z-index: 6;
     transition: 
         left 0.4s ease,
         visibility 0.4s ease;
+}
+
+.menu a {
+    color: rgb(218, 218, 218);
 }
 
 .menu.show {
@@ -455,7 +463,7 @@ img {
 }
 
 .main-screen__container {
-    padding: 160px 0;
+    padding: 160px 20px;
 }
 
 .main-screen__bg {
@@ -489,8 +497,8 @@ img {
 }
 
 .main-screen__logo {
-    width: 320px;
-    height: 320px;
+    max-width: 320px;
+    max-height: 320px;
 }
 
 .main-screen__text {

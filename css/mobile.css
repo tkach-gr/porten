@@ -3,6 +3,10 @@
         display: none;
     }
 
+    .menu {
+        display: flex;
+    }
+
     .menu-item_img {
         margin-left: 0;
     }
@@ -11,7 +15,62 @@
         display: none;
     }
 
+    .menu-btn {
+        display: block;
+    }
+
     .main-screen__container {
-        padding: 95px 0;
+        padding: 95px 20px;
+    }
+
+    .card__name, .card__price {
+        text-align: center;
+    }
+
+    .brands {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .brands__list {
+        justify-content: center;
+    }
+
+    .bottom__text {
+        text-align: center;
+    }
+
+    .bottom__categories-list {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .md-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .mailing-form {
+        flex-direction: column;
+    }
+
+    .mailing-form__mail-input {
+        flex: auto;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .header__logo-link {
+        font-size: 28px;
+    }
+
+    .menu-item {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
